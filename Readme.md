@@ -3,23 +3,51 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E708)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Bars - Create and customize bar edit items at runtime
+
+This example creates two [bar edit items](https://docs.devexpress.com/WindowsForms/DevExpress.XtraBars.BarEditItem) (combobox and progress bar) and places them on top and status bars.
+
+![WinForms Bars - Create and customize bar edit items at runtime(https://raw.githubusercontent.com/DevExpress-Examples/how-to-create-a-baredititem-at-runtime-e708/13.1.4%2B/media/winforms-bars-edit-items.png)
+
+```csharp
+private void Form1_Load(object sender, System.EventArgs e) {
+    DevExpress.XtraBars.BarEditItem item;
+    DevExpress.XtraEditors.Repository.RepositoryItemComboBox combo;
+    DevExpress.XtraEditors.Repository.RepositoryItemProgressBar progress;
+
+    barManager1.ForceInitialize();
+
+    combo = barManager1.RepositoryItems.Add("ComboBoxEdit") as DevExpress.XtraEditors.Repository.RepositoryItemComboBox;
+    combo.Items.Add("Item A");
+    combo.Items.Add("Item B");
+    item = new DevExpress.XtraBars.BarEditItem(barManager1);
+    item.Edit = combo;
+    item.EditValue = "[n/a]";
+    item.Width = 100;
+    barStandard.AddItem(item);
+
+    progress = barManager1.RepositoryItems.Add("ProgressBarControl") as DevExpress.XtraEditors.Repository.RepositoryItemProgressBar;
+    item = new DevExpress.XtraBars.BarEditItem(barManager1);
+    item.Edit = progress;
+    item.EditValue = 26; // 26%
+    item.Width = 150;
+    barStatus.AddItem(item);
+}
+```
+
+## Files to Review
 
 * [Form1.cs](./CS/Form1.cs) (VB: [Form1.vb](./VB/Form1.vb))
-<!-- default file list end -->
-# How to create a BarEditItem at runtime
 
 
-<p>This example demonstrates how to create edit items and place them on different bars.<br />
-For more information, please refer to the <a href="https://www.devexpress.com/Support/Center/p/A2924">How to create a BarEditItem at runtime</a> article.</p><p><strong>See Also:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/A496">How to avoid problems when adding bar item links to a form when it is loading</a><br />
-<a href="https://www.devexpress.com/Support/Center/p/A2867">How to create the main menu at runtime</a><br />
-<a href="https://www.devexpress.com/Support/Center/p/A2881">How to programmatically create a status bar and show different text depending upon which item is currently selected</a><br />
-<a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraBarsBarEditItem_Edittopic">BarEditItem.Edit Property</a><br />
-<a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraBarsBar_AddItemtopic">Bar.AddItem Method</a><br />
-<a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraBarsBarItem_Visibilitytopic">BarItem.Visibility Property</a></p>
+## Documentation
 
-<br/>
+* [Add Bar Items To Toolbars](https://docs.devexpress.com/WindowsForms/116782/controls-and-libraries/ribbon-bars-and-menu/bars/tutorials/add-bar-items-to-toolbars)
 
 
+## See Also
+
+* [How to create a BarEditItem at runtime](https://supportcenter.devexpress.com/ticket/details/a2924/how-to-create-a-baredititem-at-runtime)
+* [How to avoid problems when adding bar item links to a form when it is loading](https://supportcenter.devexpress.com/ticket/details/a496/how-to-avoid-problems-when-adding-bar-item-links-to-a-form-when-it-is-loading)
+* [How to create the main menu at runtime](https://supportcenter.devexpress.com/ticket/details/a2867/how-to-create-the-main-menu-at-runtime)
