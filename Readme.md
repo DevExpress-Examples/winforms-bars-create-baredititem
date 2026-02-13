@@ -53,7 +53,7 @@ private void Form1_Load(object sender, System.EventArgs e) {
 * [How to avoid problems when adding bar item links to a form when it is loading](https://supportcenter.devexpress.com/ticket/details/a496/how-to-avoid-problems-when-adding-bar-item-links-to-a-form-when-it-is-loading)
 * [How to create the main menu at runtime](https://supportcenter.devexpress.com/ticket/details/a2867/how-to-create-the-main-menu-at-runtime)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-bars-create-baredititem&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-bars-create-baredititem&~~~was_helpful=no)
 
